@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import SelectionToggleBtn from "./SelectionToggleBtn";
 import PokemonTypeTags from "./PokemonTypeTags";
+import { useContext } from "react";
+import { SelectionContext } from "../context/selectionContext";
 
 const StPokeCard = styled.div`
   display: flex;
@@ -51,8 +53,9 @@ const StPokeCardName = styled.h5`
   font-weight: bold;
 `
 
-const PokemonCard = ({ pokemonInfo, selectionHook }) => {
-  const [pokemonSelection,] = selectionHook;
+const PokemonCard = ({ pokemonInfo }) => {
+  const data = useContext(SelectionContext);
+  const { pokemonSelection } = data;
   const { img_url, korean_name, types, id } = pokemonInfo;
   const navigateTo = useNavigate();
 
@@ -76,10 +79,9 @@ const PokemonCard = ({ pokemonInfo, selectionHook }) => {
         </StPokeCardImgWrapper>
         <StPokeCardInfo>
           <StPokeCardName>{korean_name}</StPokeCardName>
-          <PokemonTypeTags types={types}/>
+          <PokemonTypeTags types={types} />
         </StPokeCardInfo>
         <SelectionToggleBtn
-          pokemonSelectionHook={selectionHook}
           pokemonInfo={pokemonInfo}
           style={toggleBtnStyle}
         />

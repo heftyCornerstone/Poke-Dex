@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import pokeBoxLimitNum from "../assets/pokeDexConfigData/pokeBoxLimitNum";
+import { useContext } from "react";
+import { SelectionContext } from "../context/selectionContext";
 
 const StDashboardWrapper = styled.div`
   display: flex;
@@ -68,8 +70,9 @@ const PokemonSlotBox = () => {
   );
 };
 
-const PokemonSlot = ({ selectionHook }) => {
-  const [pokemonSelection,] = selectionHook;
+const PokemonSlot = () => {
+  const data = useContext(SelectionContext);
+  const pokemonSelection = data.pokemonSelection;
   const shortage = pokeBoxLimitNum - pokemonSelection.length;
   const fillerArr = Array(shortage).fill(null);
   const inSlot = [...pokemonSelection, ...fillerArr];
@@ -81,7 +84,6 @@ const PokemonSlot = ({ selectionHook }) => {
           <PokemonCard
             key={key}
             pokemonInfo={curPokemon}
-            selectionHook={selectionHook}
           />
         ) : (
           <PokemonSlotBox key={key} />
@@ -91,7 +93,7 @@ const PokemonSlot = ({ selectionHook }) => {
   );
 };
 
-const Dashboard = ({ selectionHook }) => {
+const Dashboard = () => {
   return (
     <StDashboardWrapper>
       <StDashboard>
@@ -100,7 +102,6 @@ const Dashboard = ({ selectionHook }) => {
         </StLogo>
         <StPokemonSlotWrapper>
           <PokemonSlot
-            selectionHook={selectionHook}
           />
         </StPokemonSlotWrapper>
       </StDashboard>

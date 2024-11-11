@@ -5,6 +5,8 @@ import useSelectionToggle from "../hooks/useSelectionToggle";
 import SelectionToggleBtn from "../components/SelectionToggleBtn";
 import StyledBtn from "../components/StyledBtn";
 import PokemonTypeTags from "../components/PokemonTypeTags";
+import { useContext } from "react";
+import { SelectionContext } from "../context/selectionContext";
 
 const StDetailsMain = styled.main`
   display: flex;
@@ -59,9 +61,9 @@ const StDetailsBtns = styled.div`
   height: 20%;
 `;
 
-const DetailsButtons = ({ selectedPokemons, pokemonInfo }) => {
-  const [pokemonSelection, setPokemonSelection] = useSelectionToggle(selectedPokemons);
-  const pokemonSelectionHook = [pokemonSelection, setPokemonSelection];
+const DetailsButtons = ({ pokemonInfo }) => {
+  const data = useContext(SelectionContext);
+  const { pokemonSelection } = data;
   const navigateTo = useNavigate();
 
   const onClickGobackHandler = () => {
@@ -76,7 +78,6 @@ const DetailsButtons = ({ selectedPokemons, pokemonInfo }) => {
   return (
     <StDetailsBtns>
       <SelectionToggleBtn
-        pokemonSelectionHook={pokemonSelectionHook}
         pokemonInfo={pokemonInfo}
         style={detailsBtnsStyle}
       />
@@ -89,30 +90,32 @@ const DetailsButtons = ({ selectedPokemons, pokemonInfo }) => {
 
 const Details = () => {
   const location = useLocation();
+  const selection = location.state;
+  const [pokemonSelection, handlePokemonSelection] = useSelectionToggle(selection);
   const { pokemonId } = useParams();
-  const selectedPokemons = location.state;
   const pokemonInfo = MOCK_DATA.filter(
     (pokemonData) => pokemonData.id === parseInt(pokemonId)
   )[0];
   const { img_url, korean_name, types, description } = pokemonInfo;
 
   return (
-    <StDetailsMain>
-      <StPokemonsheet>
-        <StPokemonImgWrapper>
-          <StPokemonImg src={img_url} alt="no img" />
-        </StPokemonImgWrapper>
-        <StPokemonInfo>
-          <StPokemonName>{korean_name}</StPokemonName>
-          <PokemonTypeTags types={types} />
-          <StPokemonDesc>{description}</StPokemonDesc>
-        </StPokemonInfo>
-        <DetailsButtons
-          selectedPokemons={selectedPokemons}
-          pokemonInfo={pokemonInfo}
-        />
-      </StPokemonsheet>
-    </StDetailsMain>
+    <SelectionContext.Provider value={{ pokemonSelection, handlePokemonSelection }}>
+      <StDetailsMain>
+        <StPokemonsheet>
+          <StPokemonImgWrapper>
+            <StPokemonImg src={img_url} alt="no img" />
+          </StPokemonImgWrapper>
+          <StPokemonInfo>
+            <StPokemonName>{korean_name}</StPokemonName>
+            <PokemonTypeTags types={types} />
+            <StPokemonDesc>{description}</StPokemonDesc>
+          </StPokemonInfo>
+          <DetailsButtons
+            pokemonInfo={pokemonInfo}
+          />
+        </StPokemonsheet>
+      </StDetailsMain>
+    </SelectionContext.Provider>
   );
 };
 

@@ -3,6 +3,7 @@ import PokemonList from "../components/PokemonList";
 import styled from "styled-components";
 import useSelectionToggle from "../hooks/useSelectionToggle";
 import { useLocation } from "react-router-dom";
+import { SelectionContext } from "../context/selectionContext";
 
 const StMain = styled.main`
     display: flex;
@@ -17,13 +18,14 @@ const StMain = styled.main`
 const Dex = () => {
     const location = useLocation()
     const storedPokemonsState = (location.state) ? location.state : [];
-    const selectionHook = useSelectionToggle(storedPokemonsState);;
-    
+    const [pokemonSelection, handlePokemonSelection] = useSelectionToggle(storedPokemonsState);
     return (
-        <StMain>
-            <Dashboard selectionHook={selectionHook} />
-            <PokemonList selectionHook={selectionHook} />
-        </StMain>
+        <SelectionContext.Provider value={{ pokemonSelection, handlePokemonSelection }}>
+            <StMain>
+                <Dashboard />
+                <PokemonList />
+            </StMain>
+        </SelectionContext.Provider>
     )
 }
 
