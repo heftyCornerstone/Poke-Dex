@@ -1,18 +1,29 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createBrowserRouter} from "react-router-dom";
 import Home from "../pages/Home";
 import Dex from "../pages/Dex";
 import Details from "../pages/Details";
+import ContextLayout from "../pages/ContextLayout";
 
-const Router = () => {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/dex" element={<Dex />} />
-                <Route path="/details/:pokemonId" element={<Details />} />
-            </Routes>
-        </BrowserRouter>
-    );
-}
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Home />,
+    },
+    {
+        element: <ContextLayout />,
+        children: [
+            
+            {
+                path: '/dex',
+                element: <Dex />,
+            },
+            {
+                path: '/details/:pokemonId',
+                element: <Details />,
+            },
+        ]
+    },
+    
+])
 
-export default Router;
+export default router;

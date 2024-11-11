@@ -1,11 +1,12 @@
-import Router from "./shared/Router";
+import router from "./shared/router";
+import { RouterProvider } from "react-router-dom";
 import GlobalStyle from "./styles/globalStyle";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Router />
+      <RouterProvider router={router} />
     </>
   );
 }

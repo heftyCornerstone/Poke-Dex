@@ -1,7 +1,6 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import MOCK_DATA from "../assets/pokeDexConfigData/MOKE_DATA";
 import styled from "styled-components";
-import useSelectionToggle from "../hooks/useSelectionToggle";
 import SelectionToggleBtn from "../components/SelectionToggleBtn";
 import StyledBtn from "../components/StyledBtn";
 import PokemonTypeTags from "../components/PokemonTypeTags";
@@ -89,9 +88,6 @@ const DetailsButtons = ({ pokemonInfo }) => {
 };
 
 const Details = () => {
-  const location = useLocation();
-  const selection = location.state;
-  const [pokemonSelection, handlePokemonSelection] = useSelectionToggle(selection);
   const { pokemonId } = useParams();
   const pokemonInfo = MOCK_DATA.filter(
     (pokemonData) => pokemonData.id === parseInt(pokemonId)
@@ -99,23 +95,21 @@ const Details = () => {
   const { img_url, korean_name, types, description } = pokemonInfo;
 
   return (
-    <SelectionContext.Provider value={{ pokemonSelection, handlePokemonSelection }}>
-      <StDetailsMain>
-        <StPokemonsheet>
-          <StPokemonImgWrapper>
-            <StPokemonImg src={img_url} alt="no img" />
-          </StPokemonImgWrapper>
-          <StPokemonInfo>
-            <StPokemonName>{korean_name}</StPokemonName>
-            <PokemonTypeTags types={types} />
-            <StPokemonDesc>{description}</StPokemonDesc>
-          </StPokemonInfo>
-          <DetailsButtons
-            pokemonInfo={pokemonInfo}
-          />
-        </StPokemonsheet>
-      </StDetailsMain>
-    </SelectionContext.Provider>
+    <StDetailsMain>
+      <StPokemonsheet>
+        <StPokemonImgWrapper>
+          <StPokemonImg src={img_url} alt="no img" />
+        </StPokemonImgWrapper>
+        <StPokemonInfo>
+          <StPokemonName>{korean_name}</StPokemonName>
+          <PokemonTypeTags types={types} />
+          <StPokemonDesc>{description}</StPokemonDesc>
+        </StPokemonInfo>
+        <DetailsButtons
+          pokemonInfo={pokemonInfo}
+        />
+      </StPokemonsheet>
+    </StDetailsMain>
   );
 };
 
