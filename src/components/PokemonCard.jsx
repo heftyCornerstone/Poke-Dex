@@ -79,7 +79,7 @@ const PokemonCard = ({ pokemonInfo }) => {
         </StPokeCardInfo>
         <SelectionToggleBtn
           pokemonInfo={pokemonInfo}
-          style={toggleBtnStyle}
+          $style={toggleBtnStyle}
         />
       </StPokeCardInner>
     </StPokeCard>
