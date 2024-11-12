@@ -135,6 +135,7 @@ UI Library로는 `sweetalert2`를 사용하였습니다.<br>
 
 #### 저장한 포켓몬 기억하기
 <img src='https://github.com/user-attachments/assets/fa707e22-a110-4d75-8591-86b3b21c73f8' width='60%'>
+<br>
 도감 페이지와 상세 페이지를 오갈 때 저장해둔 포켓몬이 사라지지 않습니다.
 
 <br><br>
@@ -142,17 +143,19 @@ UI Library로는 `sweetalert2`를 사용하였습니다.<br>
 #### 반응형 레이아웃
 모든 페이지에 반응형 레이아웃이 적용되어 있습니다.
 
+<br>
+
 **홈**
 
 <img src='https://github.com/user-attachments/assets/57652e60-6dd7-408d-96e3-2df7b02ca154' width='60%'>
 
-<br>
+<br><br>
 
 **도감**
 
 <img src='https://github.com/user-attachments/assets/82768765-0b0d-4f8d-8265-52f7f1092558' width='60%'>
 
-<br>
+<br><br>
 
 **상세**
 
