@@ -69,7 +69,7 @@ const PokemonCard = ({ pokemonInfo, selectionHook }) => {
   }
 
   return (
-    <StPokeCard id={id} onClick={onClickCardHandler}>
+    <StPokeCard onClick={onClickCardHandler}>
       <StPokeCardInner>
         <StPokeCardImgWrapper>
           <StPokeCardImg src={img_url} alt="no img" />

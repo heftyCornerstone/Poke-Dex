@@ -15,9 +15,9 @@ const StMain = styled.main`
 `;
 
 const Dex = () => {
-    const location = useLocation()
+    const location = useLocation();
     const storedPokemonsState = (location.state) ? location.state : [];
-    const selectionHook = useSelectionToggle(storedPokemonsState);;
+    const selectionHook = useSelectionToggle(storedPokemonsState);
     
     return (
         <StMain>
