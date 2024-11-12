@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import pokeBoxLimitNum from "../assets/pokeDexConfigData/pokeBoxLimitNum";
-import DashboardLogo from "../assets/imgs/Dashboard_Logo.png"
-import PokeBall from "../assets/imgs/Poke_Ball.webp"
+import dashboardLogoImg from "../assets/imgs/Dashboard_Logo.png"
+import pokeBallImg from "../assets/imgs/Poke_Ball.webp"
 
 const StDashboardWrapper = styled.div`
   display: flex;
@@ -65,7 +65,7 @@ const StPokemonSlotBoxImg = styled.img`
 const PokemonSlotBox = () => {
   return (
     <StPokemonSlotBox>
-      <StPokemonSlotBoxImg src={PokeBall} alt="" />
+      <StPokemonSlotBoxImg src={pokeBallImg} alt="" />
     </StPokemonSlotBox>
   );
 };
@@ -98,7 +98,7 @@ const Dashboard = ({ selectionHook }) => {
     <StDashboardWrapper>
       <StDashboard>
         <StLogo>
-          <StLogoImg src={DashboardLogo} alt="no logo" />
+          <StLogoImg src={dashboardLogoImg} alt="no logo" />
         </StLogo>
         <StPokemonSlotWrapper>
           <PokemonSlot
