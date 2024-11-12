@@ -10,9 +10,12 @@ const StMain = styled.main`
   background-color: #fcc760;
 `;
 const StLogoWrapper = styled.div`
-  width: 25%;
+  width: 380px;
   @media (max-width: 1100px) {
-    width: 40%;
+    width: 300px;
+  }
+  @media (max-width: 600px) {
+    width: 250px;
   }
 `;
 const StLogo = styled.img`
