@@ -3,7 +3,7 @@ import selectionBtnToggler from "../utils/selectionBtnToggler";
 import StyledBtn from "./StyledBtn";
 import { SelectionContext } from "../context/selectionContext";
 
-const SelectionToggleBtn = ({ pokemonInfo, style }) => {
+const SelectionToggleBtn = ({ pokemonInfo, $style }) => {
     const data = useContext(SelectionContext);
     const pokemonSelectionHook = [data.pokemonSelection, data.handlePokemonSelection];
     const { selectionBtnConfig, handleOnclick } = selectionBtnToggler(
@@ -12,10 +12,10 @@ const SelectionToggleBtn = ({ pokemonInfo, style }) => {
     );
     const { configStyles, btnMode } = selectionBtnConfig;
 
-    const btnStyle = { ...style, ...configStyles }
+    const btnStyle = { ...$style, ...configStyles }
 
     return (
-        <StyledBtn onClickHandler={handleOnclick} style={btnStyle}>
+        <StyledBtn onClickHandler={handleOnclick} $style={btnStyle}>
             {btnMode}
         </StyledBtn>
     );
