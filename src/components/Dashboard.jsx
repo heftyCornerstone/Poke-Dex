@@ -3,6 +3,8 @@ import PokemonCard from "./PokemonCard";
 import pokeBoxLimitNum from "../assets/pokeDexConfigData/pokeBoxLimitNum";
 import { useContext } from "react";
 import { SelectionContext } from "../context/selectionContext";
+import dashboardLogoImg from "../assets/imgs/Dashboard_Logo.png"
+import pokeBallImg from "../assets/imgs/Poke_Ball.webp"
 
 const StDashboardWrapper = styled.div`
   display: flex;
@@ -65,7 +67,7 @@ const StPokemonSlotBoxImg = styled.img`
 const PokemonSlotBox = () => {
   return (
     <StPokemonSlotBox>
-      <StPokemonSlotBoxImg src="src/assets/imgs/poke_ball.webp" alt="" />
+      <StPokemonSlotBoxImg src={pokeBallImg} alt="" />
     </StPokemonSlotBox>
   );
 };
@@ -98,7 +100,7 @@ const Dashboard = () => {
     <StDashboardWrapper>
       <StDashboard>
         <StLogo>
-          <StLogoImg src="src/assets/imgs/Dashboard_Logo.png" alt="no logo" />
+          <StLogoImg src={dashboardLogoImg} alt="no logo" />
         </StLogo>
         <StPokemonSlotWrapper>
           <PokemonSlot
