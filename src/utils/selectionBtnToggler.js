@@ -1,8 +1,7 @@
 import Swal from 'sweetalert2'
 import pokeBoxLimitNum from '../assets/pokeDexConfigData/pokeBoxLimitNum';
 
-const selectionBtnToggler = (selectionHook, pokemon) =>{
-    const [selection, selectionHandler] = selectionHook;
+const selectionBtnToggler = (selection, selectionHandler, pokemon) =>{
     const selectionLen = selection.length;
     const isLimit = (selectionLen === pokeBoxLimitNum);
 
@@ -32,11 +31,11 @@ const selectionBtnToggler = (selectionHook, pokemon) =>{
             showDenyButton: true,
             confirmButtonText: `네`,
             denyButtonText: `아니요`,
-        })
-        if (isConfirmed) selectionHandler(isDelete, pokemon);
+        });
+        if (isConfirmed) { selectionHandler(isDelete, pokemon);}
     };
 
     return {selectionBtnConfig, handleOnclick};
-}
+};
 
 export default selectionBtnToggler;

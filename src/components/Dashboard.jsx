@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import pokeBoxLimitNum from "../assets/pokeDexConfigData/pokeBoxLimitNum";
-import { useContext } from "react";
-import { SelectionContext } from "../context/selectionContext";
+import { useSelector } from "react-redux";
 
 const StDashboardWrapper = styled.div`
   display: flex;
@@ -71,8 +70,7 @@ const PokemonSlotBox = () => {
 };
 
 const PokemonSlot = () => {
-  const data = useContext(SelectionContext);
-  const pokemonSelection = data.pokemonSelection;
+  const pokemonSelection = useSelector((state) => state.selection.selection);
   const shortage = pokeBoxLimitNum - pokemonSelection.length;
   const fillerArr = Array(shortage).fill(null);
   const inSlot = [...pokemonSelection, ...fillerArr];

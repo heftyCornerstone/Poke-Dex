@@ -1,13 +1,22 @@
-import { useContext } from "react";
+//import { useContext } from "react";
 import selectionBtnToggler from "../utils/selectionBtnToggler";
 import StyledBtn from "./StyledBtn";
-import { SelectionContext } from "../context/selectionContext";
+import { useDispatch, useSelector } from "react-redux";
+import { addPokemon, deletePokemon } from "../redux/slices/selectionSlice";
 
 const SelectionToggleBtn = ({ pokemonInfo, style }) => {
-    const data = useContext(SelectionContext);
-    const pokemonSelectionHook = [data.pokemonSelection, data.handlePokemonSelection];
+    const dispatch = useDispatch();
+    const handlePokemonSelection = (isDelete, pokemon) => {
+        if (isDelete) {
+            dispatch(deletePokemon(pokemon));
+        } else {
+            dispatch(addPokemon(pokemon));
+        }
+    }
+    const selection = useSelector((state)=>state.selection.selection);
     const { selectionBtnConfig, handleOnclick } = selectionBtnToggler(
-        pokemonSelectionHook,
+        selection, 
+        handlePokemonSelection,
         pokemonInfo
     );
     const { configStyles, btnMode } = selectionBtnConfig;
