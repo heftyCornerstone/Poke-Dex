@@ -20,7 +20,7 @@ const StPokemonListGrid = styled.div`
   margin: 50px 0;
 `;
 
-const PokemonList = ({ selectionHook }) => {
+const PokemonList = () => {
 
     return (
         <StPokemonListWrapper>
@@ -32,7 +32,6 @@ const PokemonList = ({ selectionHook }) => {
                         <PokemonCard
                             key={id}
                             pokemonInfo={data}
-                            selectionHook={selectionHook}
                         />
                     );
                 })}
