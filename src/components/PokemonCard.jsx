@@ -2,8 +2,6 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import SelectionToggleBtn from "./SelectionToggleBtn";
 import PokemonTypeTags from "./PokemonTypeTags";
-import { useContext } from "react";
-import { SelectionContext } from "../context/selectionContext";
 
 const StPokeCard = styled.div`
   display: flex;
@@ -30,39 +28,37 @@ const StPokeCardInner = styled.div`
   align-items: center;
   margin: 10px;
   text-align: center;
-`
+`;
 const StPokeCardImgWrapper = styled.div`
   width: 100%;
-`
+`;
 const StPokeCardImg = styled.img`
   width: 100%;
   height: 96px;
   @media (max-width: 1200px) {
     height: 75px;
   }
-`
+`;
 const StPokeCardInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
   gap: 10px;
-`
+`;
 const StPokeCardName = styled.h5`
   font-size: 16px;
   font-weight: bold;
-`
+`;
 
 const PokemonCard = ({ pokemonInfo }) => {
-  const data = useContext(SelectionContext);
-  const { pokemonSelection } = data;
   const { img_url, korean_name, types, id } = pokemonInfo;
   const navigateTo = useNavigate();
 
   const onClickCardHandler = (e) => {
     const target = e.target.tagName;
     if (target !== "BUTTON") {
-      navigateTo(`/details/${id}`, { state: pokemonSelection });
+      navigateTo(`/details/${id}`);
     }
   };
 

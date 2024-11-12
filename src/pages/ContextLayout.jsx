@@ -8,7 +8,7 @@ const ContextLayout = ()=>{
         <SelectionContext.Provider value={{ pokemonSelection, handlePokemonSelection }}>
             <Outlet/>
         </SelectionContext.Provider>
-    )
+    );
 }
 
 export default ContextLayout;

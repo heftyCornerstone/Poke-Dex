@@ -4,8 +4,6 @@ import styled from "styled-components";
 import SelectionToggleBtn from "../components/SelectionToggleBtn";
 import StyledBtn from "../components/StyledBtn";
 import PokemonTypeTags from "../components/PokemonTypeTags";
-import { useContext } from "react";
-import { SelectionContext } from "../context/selectionContext";
 
 const StDetailsMain = styled.main`
   display: flex;
@@ -47,10 +45,10 @@ const StPokemonInfo = styled.div`
 const StPokemonName = styled.h3`
   font-size: 20px;
   font-weight: bold;
-`
+`;
 const StPokemonDesc = styled.div`
   word-break: keep-all;
-`
+`;
 const StDetailsBtns = styled.div`
   display: flex;
   flex-direction: column;
@@ -61,12 +59,10 @@ const StDetailsBtns = styled.div`
 `;
 
 const DetailsButtons = ({ pokemonInfo }) => {
-  const data = useContext(SelectionContext);
-  const { pokemonSelection } = data;
   const navigateTo = useNavigate();
 
   const onClickGobackHandler = () => {
-    navigateTo("/dex", { state: pokemonSelection });
+    navigateTo("/dex");
   };
   const detailsBtnsStyle = {
     "width": "70px",

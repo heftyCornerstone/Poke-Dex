@@ -12,7 +12,7 @@ const StDashboardWrapper = styled.div`
   border: 3px dashed #eba21a;
   border-radius: 15px;
   background-color: #ffd994;
-`
+`;
 const StDashboard = styled.div`
   display: flex;
   flex-direction: column;
