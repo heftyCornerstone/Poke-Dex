@@ -10,6 +10,8 @@ main 브랜치는 어떤 브랜치여도 좋음
 2. context 브랜치 : Context-API 사용한 버전
 3. (`선택`) redux-toolkits 브랜치 : Redux-Toolkit 사용한 버전
 
+<br>
+
 ### 스타일링
 
 styled-components 사용<br>
