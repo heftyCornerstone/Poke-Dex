@@ -13,7 +13,7 @@ const StSelectionToggleBtn = styled.button`
 const StyledBtn = ({ style, onClickHandler, children})=>{
     return (
         <StSelectionToggleBtn style={style} onClick={onClickHandler}>{children}</StSelectionToggleBtn>
-    )
+    );
 }
 
 export default StyledBtn;

@@ -32,7 +32,7 @@ const selectionBtnToggler = (selectionHook, pokemon) =>{
             showDenyButton: true,
             confirmButtonText: `네`,
             denyButtonText: `아니요`,
-        })
+        });
         if (isConfirmed) selectionHandler(isDelete, pokemon);
     };
 

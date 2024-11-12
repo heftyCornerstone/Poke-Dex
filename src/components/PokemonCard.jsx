@@ -28,28 +28,28 @@ const StPokeCardInner = styled.div`
   align-items: center;
   margin: 10px;
   text-align: center;
-`
+`;
 const StPokeCardImgWrapper = styled.div`
   width: 100%;
-`
+`;
 const StPokeCardImg = styled.img`
   width: 100%;
   height: 96px;
   @media (max-width: 1200px) {
     height: 75px;
   }
-`
+`;
 const StPokeCardInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
   gap: 10px;
-`
+`;
 const StPokeCardName = styled.h5`
   font-size: 16px;
   font-weight: bold;
-`
+`;
 
 const PokemonCard = ({ pokemonInfo, selectionHook }) => {
   const [pokemonSelection,] = selectionHook;

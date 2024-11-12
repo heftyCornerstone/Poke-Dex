@@ -10,6 +10,6 @@ button {
     font-weight: bold;
     cursor: pointer;
 }
-`
+`;
 
 export default GlobalStyle;

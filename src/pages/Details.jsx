@@ -46,10 +46,10 @@ const StPokemonInfo = styled.div`
 const StPokemonName = styled.h3`
   font-size: 20px;
   font-weight: bold;
-`
+`;
 const StPokemonDesc = styled.div`
   word-break: keep-all;
-`
+`;
 const StDetailsBtns = styled.div`
   display: flex;
   flex-direction: column;

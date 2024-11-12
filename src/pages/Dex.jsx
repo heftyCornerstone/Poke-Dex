@@ -12,7 +12,7 @@ const StMain = styled.main`
     margin-top: 50px;
     width: 100%;
     gap: 50px;
-`
+`;
 
 const Dex = () => {
     const location = useLocation()
@@ -24,7 +24,7 @@ const Dex = () => {
             <Dashboard selectionHook={selectionHook} />
             <PokemonList selectionHook={selectionHook} />
         </StMain>
-    )
+    );
 }
 
 export default Dex;

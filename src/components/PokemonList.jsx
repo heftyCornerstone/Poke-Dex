@@ -9,7 +9,7 @@ const StPokemonListWrapper = styled.div`
   border: 3px dashed #eba21a;
   border-radius: 15px;
   background-color: #ffd994;
-`
+`;
 const StPokemonListGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -38,7 +38,7 @@ const PokemonList = ({ selectionHook }) => {
                 })}
             </StPokemonListGrid>
         </StPokemonListWrapper>
-    )
+    );
 }
 
 export default PokemonList;
