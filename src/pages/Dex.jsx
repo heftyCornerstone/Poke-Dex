@@ -7,7 +7,7 @@ const StMain = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin: 50px 0;
     width: 100%;
     gap: 50px;
 `;
