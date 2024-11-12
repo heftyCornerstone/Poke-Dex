@@ -50,12 +50,10 @@ PokemonCard : 포켓몬 카드를 생성
 최대 선택 수 제한 : 선택할 수 있는 포켓몬의 갯수에 제한을 둔다.<br>
 
 ```
-		   제한을 초과하면 
-		   alert
-		   혹은 
-		   (선택) UI Library 이용, Modal 또는 toast UI 요소로.
-
-		    라이브러리 목록 : react-toastify, sweetalert2, sonner
+제한을 초과하면 
+alert
+혹은 
+(선택) UI Library 이용, Modal 또는 toast UI 요소로.
 ```
 
 <br>
