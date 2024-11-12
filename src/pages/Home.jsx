@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <StMain>
       <StLogoWrapper>
-        <StLogo src="src/assets/imgs/Home_Logo.png" alt="no logo" />
+        <StLogo src="./src/assets/imgs/Home_Logo.png" alt="no logo" />
       </StLogoWrapper>
       <br />
       <StToDexBtn onClick={onToDexClicked}>도감보기</StToDexBtn>

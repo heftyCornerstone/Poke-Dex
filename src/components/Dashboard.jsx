@@ -96,7 +96,7 @@ const Dashboard = () => {
     <StDashboardWrapper>
       <StDashboard>
         <StLogo>
-          <StLogoImg src="src/assets/imgs/Dashboard_Logo.png" alt="no logo" />
+          <StLogoImg src="./src/assets/imgs/Dashboard_Logo.png" alt="no logo" />
         </StLogo>
         <StPokemonSlotWrapper>
           <PokemonSlot
