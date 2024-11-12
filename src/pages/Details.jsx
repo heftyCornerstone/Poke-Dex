@@ -78,9 +78,9 @@ const DetailsButtons = ({ selectedPokemons, pokemonInfo }) => {
       <SelectionToggleBtn
         pokemonSelectionHook={pokemonSelectionHook}
         pokemonInfo={pokemonInfo}
-        style={detailsBtnsStyle}
+        $style={detailsBtnsStyle}
       />
-      <StyledBtn type="button" onClickHandler={onClickGobackHandler} style={detailsBtnsStyle}>
+      <StyledBtn type="button" onClickHandler={onClickGobackHandler} $style={detailsBtnsStyle}>
         돌아가기
       </StyledBtn>
     </StDetailsBtns>
