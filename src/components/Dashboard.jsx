@@ -81,7 +81,7 @@ const PokemonSlot = () => {
   return (
     <StPokemonSlot>
       {inSlot.map((curPokemon, i) => {
-        const key = `pokemonSlot${i}`;
+        const key = new Date().getTime()+i;
         return curPokemon ? (
           <PokemonCard
             key={key}

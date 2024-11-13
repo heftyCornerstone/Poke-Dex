@@ -24,10 +24,10 @@ const StTypeTageSpan = styled.span`
 const PokemonTypeTags = ({ types }) => {
   return (
     <StTypeTages>
-      {types.map((type, i) => {
+      {types.map((type) => {
         const typeColor = pokeTypeColors[type];
         return (
-          <StTypeTageSpan key={`type${i}`} color={typeColor}>
+          <StTypeTageSpan key={type} color={typeColor}>
             {type}
           </StTypeTageSpan>
         );
