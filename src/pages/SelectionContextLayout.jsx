@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { SelectionContext } from "../context/selectionContext";
 import { useState } from "react";
 
-const ContextLayout = ()=>{
+const SelectionContextLayout = ()=>{
     const [pokemonSelection, setPokemonSelection] = useState([]);
     const handlePokemonSelection = (isDelete, pokemon) => {
         if (isDelete) {
@@ -21,4 +21,4 @@ const ContextLayout = ()=>{
     );
 }
 
-export default ContextLayout;
+export default SelectionContextLayout;
