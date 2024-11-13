@@ -73,8 +73,7 @@ const PokemonSlotBox = () => {
 };
 
 const PokemonSlot = () => {
-  const data = useContext(SelectionContext);
-  const pokemonSelection = data.pokemonSelection;
+  const { pokemonSelection } = useContext(SelectionContext);
   const shortage = pokeBoxLimitNum - pokemonSelection.length;
   const fillerArr = Array(shortage).fill(null);
   const inSlot = [...pokemonSelection, ...fillerArr];

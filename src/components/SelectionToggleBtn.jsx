@@ -4,8 +4,8 @@ import StyledBtn from "./StyledBtn";
 import { SelectionContext } from "../context/selectionContext";
 
 const SelectionToggleBtn = ({ pokemonInfo, $style }) => {
-    const data = useContext(SelectionContext);
-    const pokemonSelectionHook = [data.pokemonSelection, data.handlePokemonSelection];
+    const { pokemonSelection, handlePokemonSelection } = useContext(SelectionContext);
+    const pokemonSelectionHook = [pokemonSelection, handlePokemonSelection];
     const { selectionBtnConfig, handleOnclick } = selectionBtnToggler(
         pokemonSelectionHook,
         pokemonInfo
