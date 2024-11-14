@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import selectionBtnToggler from "../utils/selectionBtnToggler";
 import StyledBtn from "./StyledBtn";
-import { SelectionContext } from "../context/selectionContext";
+import { SelectionContext } from "../context/SelectionContext";
 
 const SelectionToggleBtn = ({ pokemonInfo, $style }) => {
     const { pokemonSelection, handlePokemonSelection } = useContext(SelectionContext);

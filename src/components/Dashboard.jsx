@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import pokeBoxLimitNum from "../assets/pokeDexConfigData/pokeBoxLimitNum";
 import { useContext } from "react";
-import { SelectionContext } from "../context/selectionContext";
+import { SelectionContext } from "../context/SelectionContext";
 import dashboardLogoImg from "../assets/imgs/Dashboard_Logo.png"
 import pokeBallImg from "../assets/imgs/Poke_Ball.webp"
 
@@ -80,7 +80,7 @@ const PokemonSlot = () => {
   return (
     <StPokemonSlot>
       {inSlot.map((curPokemon, i) => {
-        const key = new Date().getTime()+i;
+        const key = new Date().getTime() + i;
         return curPokemon ? (
           <PokemonCard
             key={key}

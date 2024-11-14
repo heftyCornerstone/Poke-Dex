@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Dex from "../pages/Dex";
 import Details from "../pages/Details";
-import SelectionContextLayout from "../context/SelectionContextLayout";
+import { SelectionContextProvider } from "../context/SelectionContext";
 
 const router = createBrowserRouter([
     {
@@ -10,7 +10,7 @@ const router = createBrowserRouter([
         element: <Home />,
     },
     {
-        element: <SelectionContextLayout />,
+        element: <SelectionContextProvider />,
         children: [
 
             {
